@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pesan Rahasia Buat Adikickkkkk 💌</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  min-height: 100vh;
+}
+
+/* BACKGROUND LOADING */
+#loading {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #ff9acb, #8145af);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* BACKGROUND HALAMAN UTAMA */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #ffd6e8, #cce7ff);
+  z-index: -1;
+}
+
+#loading img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #a33090;
+  animation: bounce 1.5s infinite;
+}
+
+#loading p {
+  margin-top: 15px;
+  font-size: 18px;
+  color: #000000;
+}
+
+@keyframes bounce {
+  0%,100% { transform: translateY(0);}
+  50% { transform: translateY(-15px);}
+}
+
+/* MAIN */
+.container {
+  width: 90%;
+  max-width: 500px;
+  padding: 10px;
+  display: none;
+  margin: auto;
+}
+/* TRANSISI MASUK HALAMAN */
+#mainContent {
+  opacity: 0;
+  transform: scale(0.9) translateY(20px);
+  transition: all 0.8s ease;
+}
+
+#mainContent.show {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+/* TRANSISI LOADING KELUAR */
+#loading.hide {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+h1 {
+  text-align: center;
+  color: #ff4d88;
+  margin-bottom: 15px;
+  font-size: 1.8em;
+}
+
+.box {
+  background: linear-gradient(135deg, #ff7eb3, #ffb347);
+  padding: 15px;
+  border-radius: 15px;
+  margin-bottom: 12px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+  box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+  transition: transform 0.2s, box-shadow 0.2s;
+  font-size: 1em;
+}
+
+.box:hover {
+  transform: scale(1.02);
+}
+
+.hidden-text {
+  display: none;
+  margin-top: 10px;
+  font-weight: normal;
+  color: #333;
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 0.95em;
+  line-height: 1.4em;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.footer {
+  margin-top: 20px;
+  text-align: center;
+  color: #666;
+  font-style: italic;
+  font-size: 0.9em;
+}
+
+@keyframes fadeIn {
+  from {opacity:0; transform: translateY(8px);}
+  to {opacity:1; transform: translateY(0);}
+}
+
+/* RESPONSIVE HP */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5em;
+  }
+  .box {
+    padding: 12px;
+    font-size: 0.95em;
+  }
+  .hidden-text {
+    font-size: 0.9em;
+  }
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- LOADING -->
+<div id="loading">
+  <img src="adikicik.jpg">
+  <p>Lagi nyiapin pesan buat Adikickkkk... </p>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="container" id="mainContent">
+  <h1>💌 Pesan Rahasia 💌</h1>
+
+  <div class="box" onclick="toggleText(1)">
+    Klik aku dulu dong 😳
+    <div class="hidden-text" id="text1">
+      Aku tunggu ceritaa kamu nanti yaa adikickkk, hati hati dijalannn ✨
+    </div>
+  </div>
+
+  <div class="box" onclick="toggleText(2)">
+    Box lucu tapi serius 🤭
+    <div class="hidden-text" id="text2">
+      Jangan lupa senyum yaa di Jogja, soalnya senyum kamu itu wallpaper hati aku 📱 hahahaaaa
+    </div>
+  </div>
+
+  <div class="box" onclick="toggleText(3)">
+    Ini rahasia banget 😏
+    <div class="hidden-text" id="text3">
+      Semoga rihlahh kamu lancar, pulangnya bawa cerita bukan bawa gebetan 😤
+    </div>
+  </div>
+
+  <div class="box" onclick="toggleText(4)">
+    Klik lagi satuuu 
+    <div class="hidden-text" id="text4">
+      Walaupun jauh, kamu tetep deket di pikiran aku terussss tauuuu
+    </div>
+  </div>
+
+  <div class="box" onclick="toggleText(5)">
+    Kotak terakhir nih 👀
+    <div class="hidden-text" id="text5">
+      Jangan lupa makan, minum, istirahat, dan inget aku dikit aja gapapa kok 😌 hehheee
+    </div>
+  </div>
+
+  <div class="footer">
+    Hati Hatii yaa adikickkkkk Rihlahnyaa :) <br>
+    — dari seseorang yang ingin kamu selalu tersenyum :)
+    jann marahh donggg adikickk😭😢😢
+  </div>
+</div>
+
+<script>
+// LOADING TIMER
+setTimeout(()=>{
+  const loading = document.getElementById("loading");
+  const main = document.getElementById("mainContent");
+
+  loading.classList.add("hide");
+
+  setTimeout(()=>{
+    loading.style.display = "none";
+    main.style.display = "block";
+    main.classList.add("show");
+  },800);
+
+},3000);
+
+// TOGGLE TEXT
+function toggleText(num) {
+  const text = document.getElementById("text" + num);
+  if (text.style.display === "block") {
+    text.style.display = "none";
+  } else {
+    text.style.display = "block";
+  }
+}
+</script>
+
+</body>
+</html>
